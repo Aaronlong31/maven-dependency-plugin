@@ -79,6 +79,9 @@ public class ClassifierTypeTranslator
             if ( StringUtils.isNotEmpty( this.classifier ) )
             {
                 useClassifier = this.classifier;
+                if (StringUtils.isNotEmpty(artifact.getClassifier())) {
+                    useClassifier = artifact.getClassifier() + "-" + useClassifier;
+                }
             }
             else
             {
